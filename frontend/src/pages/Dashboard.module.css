@@ -1,0 +1,116 @@
+.dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.statCard {
+    padding: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    cursor: pointer;
+}
+
+.statIcon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: white;
+    box-shadow: var(--shadow-lg);
+}
+
+.statContent h3 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+    background: linear-gradient(135deg, var(--color-primary-300), var(--color-accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.statContent p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.quickActions {
+    padding: var(--spacing-2xl);
+}
+
+.quickActions h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xl);
+}
+
+.actionsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.actionButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xl);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    font-size: 1.5rem;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-base);
+}
+
+.actionButton:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-primary-500);
+    color: var(--color-primary-400);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+}
+
+.actionButton span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 640px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .actionsGrid {
+        grid-template-columns: 1fr;
+    }
+}

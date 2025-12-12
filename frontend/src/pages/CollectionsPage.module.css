@@ -1,0 +1,118 @@
+.page {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}
+
+.createButton {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-500));
+    color: white;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+}
+
+.createButton:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.loading,
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    gap: var(--spacing-md);
+    color: var(--color-text-secondary);
+}
+
+.emptyIcon {
+    font-size: 4rem;
+    color: var(--color-text-muted);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.collectionCard {
+    padding: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.collectionCard:hover {
+    transform: translateY(-4px);
+}
+
+.cardIcon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.collectionCard h3 {
+    font-size: 1.25rem;
+    color: var(--color-primary-300);
+}
+
+.collectionCard p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.promptCount {
+    margin-top: auto;
+    padding: 0.5rem 1rem;
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid var(--color-primary-700);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    color: var(--color-primary-300);
+}
+
+@media (max-width: 640px) {
+    .header {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

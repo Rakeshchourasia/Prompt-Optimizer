@@ -1,0 +1,23 @@
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    padding-top: 70px;
+}
+
+.main {
+    flex: 1;
+    padding: var(--spacing-xl);
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: var(--spacing-md);
+    }
+}

@@ -1,0 +1,186 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.modal {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    padding: 32px;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.closeButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 12px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.9);
+    transform: rotate(90deg);
+}
+
+.iconContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.warningIcon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 71, 71, 0.3));
+    border: 2px solid rgba(255, 107, 107, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #ff6b6b;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    background: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.message {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 12px 0;
+}
+
+.message strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.warning {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 32px 0;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.cancelButton,
+.deleteButton {
+    flex: 1;
+    padding: 14px 24px;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.cancelButton {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cancelButton:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.deleteButton {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    color: white;
+    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+}
+
+.deleteButton:hover:not(:disabled) {
+    background: linear-gradient(135deg, #ff5252, #e63946);
+    box-shadow: 0 6px 30px rgba(255, 107, 107, 0.6);
+    transform: translateY(-2px);
+}
+
+.cancelButton:disabled,
+.deleteButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .modal {
+        padding: 24px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .cancelButton,
+    .deleteButton {
+        width: 100%;
+    }
+}

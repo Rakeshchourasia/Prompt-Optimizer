@@ -1,0 +1,184 @@
+.page {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}
+
+.createButton {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-500));
+    color: white;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+}
+
+.createButton:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: 0.875rem 1.25rem;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.searchIcon {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+}
+
+.searchBar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    outline: none;
+}
+
+.searchBar input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.loading,
+.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    color: var(--color-text-secondary);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.promptCard {
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.promptCard:hover {
+    transform: translateY(-4px);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+}
+
+.cardHeader h3 {
+    font-size: 1.25rem;
+    color: var(--color-primary-300);
+    flex: 1;
+}
+
+.starIcon {
+    color: var(--color-accent-orange);
+    font-size: 1.25rem;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.content {
+    padding: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid var(--color-primary-600);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.tag {
+    padding: 0.25rem 0.75rem;
+    background: rgba(139, 92, 246, 0.15);
+    border: 1px solid var(--color-primary-700);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    color: var(--color-primary-300);
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--glass-border);
+}
+
+.copyButton {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+}
+
+.copyButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-primary-500);
+    color: var(--color-primary-400);
+}
+
+.usageCount {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+@media (max-width: 640px) {
+    .header {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
